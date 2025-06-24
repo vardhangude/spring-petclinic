@@ -19,5 +19,13 @@ pipeline {
                 sh './mvnw package'
             }
         }
+        stage('Debug Env') {
+            steps {
+                sh 'env'
+                sh 'whoami'
+                sh 'docker --version'
+        }
+}
+
     }
 }
